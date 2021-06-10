@@ -10,9 +10,6 @@ public class Persoana {
         this.age = age;
     }
 
-    public Persoana() {
-    }
-
     public int getAge() {
         return age;
     }

@@ -14,9 +14,6 @@ public class Hobby{
         this.addresses = addresses;
     }
 
-    public Hobby() {
-    }
-
     @Override
     public String toString() {
         return "\nHobby = " + hobby + "\nFrecventa pe saptamana = " + frecventa + "\nAdresa = " + addresses.toString();

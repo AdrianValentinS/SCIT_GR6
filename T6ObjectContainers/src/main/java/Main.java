@@ -49,20 +49,15 @@ public class Main {
 
         // Declaram adrese si liste de adrese pentru printare in hashmap.
 
-        Adresa adresa0 = new Adresa("Mount Everest, Nepal");
-        Adresa adresa1 = new Adresa("Miami, USA");
-        Adresa adresa2 = new Adresa("Florida, USA");
-        Adresa adresa3 = new Adresa("Stalingrad, Russia");
-
         List<Adresa> addressList0 = new ArrayList<Adresa>();
         List<Adresa> addressList1 = new  ArrayList<Adresa>();
         List<Adresa> addressList2 = new ArrayList<Adresa>();
         List<Adresa> addressList3= new  ArrayList<Adresa>();
 
-        addressList0.add(adresa0);
-        addressList1.add(adresa1);
-        addressList2.add(adresa2);
-        addressList3.add(adresa3);
+        addressList0.add(new Adresa("Mount Everest, Nepal"));
+        addressList1.add(new Adresa("Miami, USA"));
+        addressList2.add(new Adresa("Florida, USA"));
+        addressList3.add(new Adresa("Stalingrad, Russia"));
 
         // Declaram hobby-uri si hobbylists.
 
