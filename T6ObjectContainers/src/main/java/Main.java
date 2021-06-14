@@ -50,36 +50,74 @@ public class Main {
         // Declaram adrese si liste de adrese pentru printare in hashmap.
 
         List<Adresa> addressList0 = new ArrayList<Adresa>();
-        List<Adresa> addressList1 = new  ArrayList<Adresa>();
+        List<Adresa> addressList1 = new ArrayList<Adresa>();
         List<Adresa> addressList2 = new ArrayList<Adresa>();
-        List<Adresa> addressList3= new  ArrayList<Adresa>();
+        List<Adresa> addressList3 = new ArrayList<Adresa>();
+        List<Adresa> addressList4 = new ArrayList<Adresa>();
+        List<Adresa> addressList5 = new ArrayList<Adresa>();
+        List<Adresa> addressList6 = new ArrayList<Adresa>();
+        List<Adresa> addressList7 = new ArrayList<Adresa>();
 
         addressList0.add(new Adresa("Mount Everest, Nepal"));
         addressList1.add(new Adresa("Miami, USA"));
         addressList2.add(new Adresa("Florida, USA"));
         addressList3.add(new Adresa("Stalingrad, Russia"));
+        addressList4.add(new Adresa("Shanghai, China"));
+        addressList5.add(new Adresa("Berlin, Germany"));
+        addressList6.add(new Adresa("Paris, France"));
+        addressList7.add(new Adresa("Moscow, Russia"));
 
-        // Declaram hobby-uri si hobbylists.
+        // Declaram hobby-uri si hobbylists. Note: Unii oameni au mai putine hobby-uri decat altii.
 
         List<Hobby> hobbyList0 = new ArrayList<Hobby>();
         List<Hobby> hobbyList1 = new ArrayList<Hobby>();
+        List<Hobby> hobbyList2 = new ArrayList<Hobby>();
+        List<Hobby> hobbyList3 = new ArrayList<Hobby>();
+        List<Hobby> hobbyList4 = new ArrayList<Hobby>();
+        List<Hobby> hobbyList5 = new ArrayList<Hobby>();
 
         hobbyList0.add(new Hobby("Innot", 2, addressList0));
         hobbyList0.add(new Hobby("Pescuit", 3, addressList1));
         hobbyList1.add(new Hobby("Antrenament fizic", 5, addressList2));
         hobbyList1.add(new Hobby("Jogging", 3, addressList3));
+        hobbyList2.add(new Hobby("Dans", 2, addressList4));
+        hobbyList3.add(new Hobby("Cantat", 3, addressList5));
+        hobbyList4.add(new Hobby("Fotbal", 5, addressList6));
+        hobbyList5.add(new Hobby("Gaming", 3, addressList7));
 
-        // Declaram hashmap-uri. Aici se printeaza persoanele si hobby-urile relevante.
+        // Declaram hashmap-uri si inseram key objects de tip Persoana si value-uri de tip hobbyList cu adrese implicite.
 
         HashMap<Persoana, List<Hobby>> hashMap0 = new HashMap<>();
-        hashMap0.put(persoana0, hobbyList0);
 
-        System.out.println("HashMap pentru prima persoana: " + hashMap0.toString());
+        hashMap0.put(persoana0, hobbyList0);
+        hashMap0.put(persoana1, hobbyList1);
+        hashMap0.put(persoana2, hobbyList2);
+        hashMap0.put(persoana3, hobbyList3);
+        hashMap0.put(persoana4, hobbyList4);
+        hashMap0.put(persoana5, hobbyList5);
+
+        // Aici folosim metoda declarata mai jos care contine iterator pentru key si value.
+
+        hashMapIteratorMethod(hashMap0);
+
+        // Exemplu de iterator functionand pentru orice HashMap, cu sau fara key/value:
 
         HashMap<Persoana, List<Hobby>> hashMap1 = new HashMap<>();
-        hashMap1.put(persoana1, hobbyList1);
 
-        System.out.println("HashMap pentru a doua persoana: " + hashMap1.toString());
+        hashMapIteratorMethod(hashMap1);
+
+    }
+
+    public static void hashMapIteratorMethod(Map<Persoana, List<Hobby>> map) {
+        Iterator<Persoana> persoanaIterator = map.keySet().iterator();
+        System.out.println("Persoane sortate dupa hashmap plus iterator: ");
+
+        while (persoanaIterator.hasNext()) {
+            Persoana key = persoanaIterator.next();
+            List<Hobby> value = map.get(key);
+
+            System.out.println(key + "" + value);
+        }
 
     }
 }

@@ -20,7 +20,7 @@ public class Persoana {
 
     @Override
     public String toString() {
-        return "Persoana: " + "age = " + age + ", name = " + "'" + name;
+        return "Persoana: " + "age = " + age + ", name = " + name + " ";
     }
 
 }
