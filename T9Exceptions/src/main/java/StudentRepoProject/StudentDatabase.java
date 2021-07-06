@@ -32,6 +32,7 @@ public class StudentDatabase extends Student{
             LOGGER.log(Level.WARNING, "Log error: cannot parse illegal ID OR no student object.");
             throw new IllegalArgumentException("Cannot parse: no ID or no student object.");
         }
+        System.out.println("Student with ID " + ID + " deleted.");
     }
 
     /** @param age This method takes in age after it has been calculated by the calculateAge method and returns
@@ -45,7 +46,7 @@ public class StudentDatabase extends Student{
         }
         for (Student student : studentDatabase) {
             if(student.calculateAge() == age){
-                System.out.println(student);
+                System.out.println("Students listed by specified age: " + student);
             } else if(age < 0){
                 throw new IllegalArgumentException("Age cannot be 0.");
             } else if(age < 18){
@@ -65,7 +66,7 @@ public class StudentDatabase extends Student{
         }
         Comparator<Student> lastNameComparator = Comparator.comparing(Student::getLastName);
         studentDatabaseTemp.sort(lastNameComparator);
-        System.out.println(studentDatabaseTemp);
+        System.out.println("Students by last name: " + studentDatabaseTemp);
     }
 
     public static void compareBirthDateJava8(List<Student> studentDatabaseTemp) {
@@ -75,7 +76,7 @@ public class StudentDatabase extends Student{
         }
         Comparator<Student> birthDateComparator = Comparator.comparing(Student::getBirthDate);
         studentDatabaseTemp.sort(birthDateComparator);
-        System.out.println(studentDatabaseTemp);
+        System.out.println("Students by birth date: " + studentDatabaseTemp);
     }
 
     @Override
