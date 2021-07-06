@@ -12,6 +12,7 @@ public class Main {
 
         List<Athlete> rankings0 = AthleteManager.copyAthletesFromFile(filepath);
 
+
         // Uses multiple methods to sort the athletes by rank.
 
         Athlete.compareWinnersJava8(rankings0);

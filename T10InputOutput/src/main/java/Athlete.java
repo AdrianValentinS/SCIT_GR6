@@ -1,6 +1,11 @@
 import java.util.*;
+import lombok.*;
 
 public class Athlete {
+
+    @Getter
+    @Setter
+
 
     // Typical object list/field code.
 
