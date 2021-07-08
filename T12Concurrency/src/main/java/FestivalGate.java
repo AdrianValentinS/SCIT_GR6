@@ -17,23 +17,23 @@ private int oneDayVIPAccumulator = 0;
 
 public void attendeeThreadProcessor(String tempString) {
         switch (tempString) {
-            case "Thread[FULL,5,main]" -> {
+            case "FULL" -> {
                 fullAccumulator++;
                 attendeeAccumulator++;
             }
-            case "Thread[FULL_VIP,5,main]" -> {
+            case "FULL_VIP" -> {
                 fullVIPAccumulator++;
                 attendeeAccumulator++;
             }
-            case "Thread[FREE_PASS,5,main]" -> {
+            case "FREE_PASS" -> {
                 freePassAccumulator++;
                 attendeeAccumulator++;
             }
-            case "Thread[ONE_DAY,5,main]" -> {
+            case "ONE_DAY" -> {
                 oneDayAccumulator++;
                 attendeeAccumulator++;
             }
-            case "Thread[ONE_DAY_VIP,5,main]" -> {
+            case "ONE_DAY_VIP" -> {
                 oneDayVIPAccumulator++;
                 attendeeAccumulator++;
             }

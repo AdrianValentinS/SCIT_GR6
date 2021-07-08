@@ -25,9 +25,10 @@ public class FestivalAttendeeThread extends Thread {
     public void run() {
         Queue<Object> threadQueue0 = new LinkedList<>();
         while (true) {
-            Thread threadTemp = new Thread(TicketType.randomTicketType());
-            festivalGate.attendeeThreadProcessor(String.valueOf(threadTemp));
-            threadTemp.start();
+            ThreadRunnable threadRunnable = new ThreadRunnable();
+            Thread threadTemp = new Thread(threadRunnable);
+            threadTemp.run();
+            festivalGate.attendeeThreadProcessor(threadRunnable.getTicketType());
             threadQueue0.offer(threadTemp);
             try {
                 Thread.sleep(500);
