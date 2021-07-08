@@ -13,6 +13,7 @@ public class MainTest {
 
     @Rule
     public TemporaryFolder folder = new TemporaryFolder();
+    Athlete athleteObjectTest = new Athlete();
 
     @Test  // Works with temporary files that don't exist outside of the unit test.
     public void fileParseTest() throws IOException {
@@ -63,7 +64,7 @@ public class MainTest {
         athleteListTest.add(athleteTest1);
         athleteListTest.add(athleteTest2);
 
-        Athlete.compareWinnersJava8(athleteListTest);
+        athleteObjectTest.compareWinnersJava8(athleteListTest);
 
         boolean containsAthlete0 = athleteListTest.contains(athleteTest0);
         boolean containsAthlete1 = athleteListTest.contains(athleteTest1);

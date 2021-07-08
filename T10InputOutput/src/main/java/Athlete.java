@@ -31,6 +31,8 @@ public class Athlete {
         this.thirdShootingRangeMisses = thirdShootingRangeMisses;
     }
 
+    public Athlete() {};
+
     /**
      * Processes xxxxx type fields.
      * @param s Loads each character and for each 'o' accumulates a number.
@@ -105,7 +107,7 @@ public class Athlete {
      * @param athleteList The object list to be sorted by skiTimeResultCalculated.
      */
 
-    public static void compareWinnersJava8(List<Athlete> athleteList) {
+    public void compareWinnersJava8(List<Athlete> athleteList) {
         Comparator<Athlete> victoryComparator = Comparator.comparing(Athlete::skiTimeResultCalculated);
         athleteList.sort(victoryComparator);
 
