@@ -35,7 +35,7 @@ public class Individual {
      * @return A new list for writing into a text file.
      */
 
-    public static List<Individual> individualListProcessor(List<Individual> individualListTemp, int month) {
+    public List<Individual> individualListProcessor(List<Individual> individualListTemp, int month) {
         return individualListTemp.stream()
                 .filter(individual -> {
                     individual.extractMonthFromBirthDate();
@@ -53,7 +53,7 @@ public class Individual {
      * @throws IOException if File Not Found.
      */
 
-    public static List<Individual> getIndividualsFromFile(String filePath) throws IOException {
+    public List<Individual> getIndividualsFromFile(String filePath) throws IOException {
         Pattern pattern0 = Pattern.compile(" ");
         List<Individual> individualListTemp;
         try (Stream<String> lines = Files.lines(Path.of(filePath))) {
@@ -87,7 +87,7 @@ public class Individual {
      * @throws IOException in case of File Not Found error.
      */
 
-    public static void writeIndividualsToFile(List<Individual> individualListTemp, String filePathOutput) throws IOException {
+    public void writeIndividualsToFile(List<Individual> individualListTemp, String filePathOutput) throws IOException {
         try (BufferedWriter bWriter0 = new BufferedWriter(new FileWriter(filePathOutput))) {
             bWriter0.write(String.valueOf(individualListTemp));
         }

@@ -1,7 +1,6 @@
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -14,6 +13,7 @@ public class IndividualTest {
 
     @Rule
     public TemporaryFolder folder = new TemporaryFolder();
+    Individual individualObjectTest = new Individual();
 
     @Test // Works with temporary files that don't exist outside of the unit test.
     public void fileParseTest() throws IOException {
@@ -31,7 +31,7 @@ public class IndividualTest {
             Talon Hunter 1947-05-08
                 """);
         bufferedWriter0.close();
-        List<Individual> individualList0 = Individual.getIndividualsFromFile(testFile.toString());
+        List<Individual> individualList0 = individualObjectTest.getIndividualsFromFile(testFile.toString());
         System.out.println(individualList0);
 
         assertTrue(testFile.exists());
@@ -63,7 +63,7 @@ public class IndividualTest {
         individualListTest.add(individualTest1);
         individualListTest.add(individualTest2);
 
-        System.out.println(Individual.individualListProcessor(individualListTest, 05));
+        System.out.println(individualObjectTest.individualListProcessor(individualListTest, 05));
 
         boolean containsIndividual0 = individualListTest.contains(individualTest0);
         boolean containsIndividual1 = individualListTest.contains(individualTest1);
@@ -96,7 +96,7 @@ public class IndividualTest {
         individualListTest.add(individualTest1);
         individualListTest.add(individualTest2);
 
-        Individual.writeIndividualsToFile(individualListTest, testFile.getAbsolutePath());
+        individualObjectTest.writeIndividualsToFile(individualListTest, testFile.getAbsolutePath());
 
         assertTrue(testFile.exists());
 

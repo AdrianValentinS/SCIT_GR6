@@ -14,9 +14,11 @@ public class Main {
         String filePath = new File("").getAbsolutePath();
         filePath = filePath.concat("\\src\\main\\resources\\individuals.txt");
 
-        List<Individual> individualList0 = Individual.getIndividualsFromFile(filePath);
-        List<Individual> individualList1 = Individual.individualListProcessor(individualList0, 2);
-        Individual.writeIndividualsToFile(individualList1, "src\\main\\resources\\individualsProcessed.txt");
+        Individual individualObject = new Individual();
+
+        List<Individual> individualList0 = individualObject.getIndividualsFromFile(filePath);
+        List<Individual> individualList1 = individualObject.individualListProcessor(individualList0, 2);
+        individualObject.writeIndividualsToFile(individualList1, "src\\main\\resources\\individualsProcessed.txt");
 
     }
 }
