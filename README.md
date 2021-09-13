@@ -1,2 +1,1 @@
-# SCIT_GR6
-PROIECTE SCOALA IT GR6
+Various projects/assignments completed over the course of the java code boot camp.
